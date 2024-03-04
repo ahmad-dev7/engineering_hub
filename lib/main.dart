@@ -38,7 +38,9 @@ class MyApp extends StatelessWidget {
           darkTheme: MyTheme.darkTheme,
           title: 'Engineering HUB',
           home: localStorage.isNotEmpty
+              // If localStorage is not empty which means user have previously logged in and so take the use to home page
               ? const BottomNavigationMenu()
+              // if  there is no data in the box then redirect them to login page
               : const LoginPage(),
         );
       },
