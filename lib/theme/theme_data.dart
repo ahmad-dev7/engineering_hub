@@ -11,7 +11,7 @@ class ThemeProvider extends ChangeNotifier {
 }
 
 class MyTheme {
-  //* Light Theme
+  //! Light Theme
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
@@ -37,7 +37,7 @@ class MyTheme {
     appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
   );
 
-  //* Dark Theme
+  //! Dark Theme
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.black,

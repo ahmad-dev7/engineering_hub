@@ -1,5 +1,5 @@
 class Student {
-  var userId;
+  dynamic userId;
   String collegeName;
   String branchName;
   String semester;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:engineering_hub/pages/login.dart';
 import 'package:engineering_hub/pages/navigation.dart';
-import 'package:engineering_hub/constants/kcolors.dart';
+import 'package:engineering_hub/theme/theme_data.dart';
 import 'package:provider/provider.dart';
 
 //* https://www.youtube.com/playlist?list=PLSOI1xClksi-GT-Nv8TWGxgDseTxTxa9U
@@ -12,9 +12,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Initializing local storage //* Hive
   await Hive.initFlutter();
-  // Creating local storage to store student data //* studentData
   await Hive.openBox('studentData');
   // Referencing local storage
   localStorage = Hive.box('studentData');

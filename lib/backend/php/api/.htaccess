@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteRule ^students/?$ students.php [NC,L]
+RewriteRule ^students/([0-9]+)/?$ students.php?id=$1 [NC,L]
+RewriteRule ^users/?$ users.php [NC,L]
+RewriteRule ^users/([0-9]+)/?$ users.php?id=$1 [NC,L]
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>

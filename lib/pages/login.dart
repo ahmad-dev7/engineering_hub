@@ -1,10 +1,10 @@
 import 'package:engineering_hub/backend/api_calls.dart';
 import 'package:engineering_hub/constants/Kstyledtext.dart';
 import 'package:engineering_hub/constants/kbutton.dart';
-import 'package:engineering_hub/constants/kcolors.dart';
+import 'package:engineering_hub/theme/theme_data.dart';
 import 'package:engineering_hub/constants/ksnackbar.dart';
 import 'package:engineering_hub/constants/kform_textfield.dart';
-import 'package:engineering_hub/constants/ktheme_changer.dart';
+import 'package:engineering_hub/theme/theme_changer.dart';
 import 'package:engineering_hub/constants/kwidgetwrap.dart';
 import 'package:engineering_hub/pages/navigation.dart';
 import 'package:engineering_hub/pages/signup.dart';

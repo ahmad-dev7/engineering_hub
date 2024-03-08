@@ -1,4 +1,4 @@
-import 'package:engineering_hub/constants/kcolors.dart';
+import 'package:engineering_hub/theme/theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

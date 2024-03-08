@@ -2,7 +2,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:engineering_hub/backend/local_storage.dart';
 import 'package:engineering_hub/constants/kbutton.dart';
 import 'package:engineering_hub/constants/kstyledtext.dart';
-import 'package:engineering_hub/constants/ktheme_changer.dart';
+import 'package:engineering_hub/theme/theme_changer.dart';
 import 'package:engineering_hub/model/student.dart';
 import 'package:engineering_hub/pages/login.dart';
 import 'package:flutter/material.dart';
