@@ -1,5 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:engineering_hub/constants/Kstyledtext.dart';
+import 'package:engineering_hub/constants/KStyledText.dart';
 import 'package:flutter/material.dart';
 
 //* Input field for college and branch
@@ -36,7 +36,7 @@ class SearchDropdownButton extends StatelessWidget {
         )),
         isExpanded: true,
         // Hint text
-        hint: styledText(
+        hint: StyledText(
           text: buttonHint,
           color: Theme.of(context).hintColor.withOpacity(0.33),
           size: isBorderNeeded == null ? 16 : 14,
@@ -170,7 +170,7 @@ class SelectDropdownButton extends StatelessWidget {
         isExpanded: true,
 
         //* Hint text
-        hint: styledText(
+        hint: StyledText(
           text: buttonHint,
           color: Theme.of(context).hintColor.withOpacity(0.33),
           size: isBorderNeeded == null ? 14 : 16,

@@ -1,4 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:easy_dashboard/easy_dashboard.dart';
 import 'package:engineering_hub/pages/screens/home.dart';
 import 'package:engineering_hub/pages/screens/message.dart';
 import 'package:engineering_hub/pages/screens/notes.dart';
@@ -15,6 +16,12 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
   List<IconData> iconsList = [Icons.group, Icons.article_rounded, Icons.home];
   List<Widget> page = const [MessagePage(), NotesPage(), HomePage()];
   int activePage = 0;
+  EasyAppController appCtrl = EasyAppController(
+    intialBody: EasyBody(
+      child: const MessagePage(),
+      title: const Text('Message Page'),
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(

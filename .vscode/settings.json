@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
     "Alives",
+    "intial",
     "Jijabai",
     "kbackground",
     "kbutton",
@@ -9,6 +10,7 @@
     "kform",
     "kformtextfield",
     "kfunctions",
+    "kget",
     "kmenu",
     "kmessage",
     "kmessagebubble",
@@ -28,5 +30,7 @@
     "Xmark",
     "Zaid"
   ],
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "cmake.sourceDirectory": "C:/Users/Ahmad Ali/OneDrive/Desktop/Projects/engineering_hub/windows",
+  "livePreview.defaultPreviewPath": "/web/index.html"
 }

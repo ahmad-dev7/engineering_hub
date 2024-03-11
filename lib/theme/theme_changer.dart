@@ -7,7 +7,7 @@ class ThemeChangerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    final themeProvider = Provider.of<ThemeDataProvider>(context);
     return FittedBox(
       fit: BoxFit.cover,
       child: SizedBox(
@@ -20,7 +20,8 @@ class ThemeChangerWidget extends StatelessWidget {
           activeThumbImage: const AssetImage('images/moon.png'),
           inactiveThumbImage: const AssetImage('images/sun.png'),
           onChanged: (value) {
-            final provider = Provider.of<ThemeProvider>(context, listen: false);
+            final provider =
+                Provider.of<ThemeDataProvider>(context, listen: false);
             provider.toggleTheme(value);
           },
         ),

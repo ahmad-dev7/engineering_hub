@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
+      create: (context) => ThemeDataProvider(),
       builder: (context, _) {
-        final themeProvider = Provider.of<ThemeProvider>(context);
+        final themeProvider = Provider.of<ThemeDataProvider>(context);
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           themeMode: themeProvider.themeMode,
@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
           darkTheme: MyTheme.darkTheme,
           title: 'Engineering HUB',
           home: localStorage.isNotEmpty
-              // If localStorage is not empty which means user have previously logged in and so take the use to home page
+              // If user is already logged-in redirect to navigation page
               ? const BottomNavigationMenu()
-              // if  there is no data in the box then redirect them to login page
+              // If user isn't logged in show login screen
               : const LoginPage(),
         );
       },

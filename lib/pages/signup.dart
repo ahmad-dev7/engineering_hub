@@ -1,5 +1,5 @@
 import 'package:engineering_hub/backend/api_calls.dart';
-import 'package:engineering_hub/constants/Kstyledtext.dart';
+import 'package:engineering_hub/constants/KStyledText.dart';
 import 'package:engineering_hub/constants/kbutton.dart';
 import 'package:engineering_hub/constants/ksnackbar.dart';
 import 'package:engineering_hub/constants/kform_textfield.dart';
@@ -95,7 +95,7 @@ class _SignupPageState extends State<SignupPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: styledText(
+        title: StyledText(
           text: 'Create Account',
           color: Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
         ),
@@ -290,7 +290,7 @@ class _SignupPageState extends State<SignupPage> {
                                   KSnackBar('All fields are required').failed();
                                 }
                               },
-                              child: styledText(text: 'Signup', size: 20),
+                              child: const StyledText(text: 'Signup', size: 20),
                             ),
                     ),
                   ],

@@ -16,7 +16,7 @@ class KBackgroundImage extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         image: DecorationImage(
-          opacity: 0.3,
+          opacity: 0.0,
           fit: BoxFit.cover,
           image: AssetImage(
             imagePath ?? "images/mumbai_university.jpg",

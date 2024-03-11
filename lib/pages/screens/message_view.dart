@@ -5,7 +5,7 @@ import 'package:engineering_hub/constants/kmenu_item_list.dart';
 import 'package:engineering_hub/constants/kmessagebubble.dart';
 import 'package:engineering_hub/constants/kmessagefield.dart';
 import 'package:engineering_hub/constants/kstream_builder.dart';
-import 'package:engineering_hub/constants/kstyledtext.dart';
+import 'package:engineering_hub/constants/kStyledText.dart';
 import 'package:engineering_hub/model/message_model.dart';
 import 'package:engineering_hub/model/student.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class _MessageBuilderState extends State<MessageBuilder> {
       children: [
         Expanded(
           child: KStreamBuilder(
-            receivedMessageList: (messageList) {
+            receivedMessageList: (jk) {
               return ListView.builder(
                 reverse: true,
                 controller: ScrollController(),
@@ -78,17 +78,19 @@ class _MessageBuilderState extends State<MessageBuilder> {
                               : CrossAxisAlignment.start,
                           children: [
                             //* Name card
-                            Visibility(
-                              visible: i == messageList.length - 1 ||
-                                  msg.senderId != messageList[i + 1].senderId ||
-                                  getDate(msg.dateTime) !=
-                                      getDate(messageList[i + 1].dateTime),
-                              child: styledText(
-                                text: msg.senderName,
-                                size: 14,
-                                color: Theme.of(context).disabledColor,
+                            if (msg.senderId != user.userId)
+                              Visibility(
+                                visible: i == messageList.length - 1 ||
+                                    msg.senderId !=
+                                        messageList[i + 1].senderId ||
+                                    getDate(msg.dateTime) !=
+                                        getDate(messageList[i + 1].dateTime),
+                                child: StyledText(
+                                  text: msg.senderName,
+                                  size: 14,
+                                  color: Theme.of(context).hintColor,
+                                ),
                               ),
-                            ),
                             //* Message bubble
                             FocusedMenuHolder(
                               onPressed: () {},
@@ -115,14 +117,14 @@ class _MessageBuilderState extends State<MessageBuilder> {
                                       ? CrossAxisAlignment.start
                                       : CrossAxisAlignment.end,
                                   children: [
-                                    styledText(
+                                    StyledText(
                                       text: msg.message,
                                       size: 15,
                                       color: Colors.white.withOpacity(0.9),
                                     ),
                                     const SizedBox(width: 10),
                                     //! date here
-                                    styledText(
+                                    StyledText(
                                       text: getTime(msg.dateTime),
                                       size: 10,
                                       color: Theme.of(context).hintColor,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ThemeProvider extends ChangeNotifier {
+class ThemeDataProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.dark;
 
   bool get isDarkMode => themeMode == ThemeMode.dark;
@@ -40,7 +40,7 @@ class MyTheme {
   //! Dark Theme
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: const Color(0xFF232627),
     primaryColor: Colors.grey.shade900,
     cardColor: Colors.blueGrey[900],
     colorScheme: ColorScheme.dark(

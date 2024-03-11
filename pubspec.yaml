@@ -46,6 +46,9 @@ dependencies:
   provider: ^6.1.1
   skeletonizer: ^1.0.1
   focused_menu: ^1.0.5
+  animated_theme_switcher: ^2.0.10
+  easy_dashboard: ^0.0.2
+  flutter_adaptive_navigation: ^0.0.6
 
 dev_dependencies:
   flutter_test:

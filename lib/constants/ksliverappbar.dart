@@ -1,5 +1,4 @@
 import 'package:engineering_hub/backend/local_storage.dart';
-import 'package:engineering_hub/constants/kbackground.dart';
 import 'package:engineering_hub/constants/kbutton.dart';
 import 'package:engineering_hub/model/items_list.dart';
 import 'package:engineering_hub/model/student.dart';
@@ -25,9 +24,12 @@ class KSliverAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final Student student = LocalStorage().readStudentData();
     return SliverAppBar(
-      floating: true, pinned: true, snap: false, elevation: 10,
+      forceElevated: true,
+
+      floating: true, pinned: true, snap: false, elevation: 100,
       backgroundColor: Theme.of(context).primaryColor,
-      expandedHeight: 230,
+      shadowColor: Theme.of(context).shadowColor,
+      expandedHeight: 200,
       //* College dropdown
       title: SearchDropdownButton(
         isBorderNeeded: false,
@@ -38,69 +40,63 @@ class KSliverAppBar extends StatelessWidget {
         onSelect: onCollegeSelect,
       ),
       flexibleSpace: FlexibleSpaceBar(
-        background: KBackgroundImage(
-          imagePath: "images/mumbai_university.jpg",
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              //* Semester and Branch dropdown
-              Flexible(
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      //* Select semester dropdown
-                      Flexible(
-                        flex: 1,
-                        child: SelectDropdownButton(
-                          isBorderNeeded: false,
-                          buttonHint: student.semester,
-                          itemsList: semesterList,
-                          selectedValue: selectedSemester,
-                          onSelect: onSemesterSelect,
-                        ),
+        background: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            //* Semester and Branch dropdown
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    //* Select semester dropdown
+                    Flexible(
+                      flex: 1,
+                      child: SelectDropdownButton(
+                        isBorderNeeded: false,
+                        buttonHint: student.semester,
+                        itemsList: semesterList,
+                        selectedValue: selectedSemester,
+                        onSelect: onSemesterSelect,
                       ),
+                    ),
 
-                      //* Empty space
-                      const SizedBox(width: 10),
+                    //* Empty space
+                    const SizedBox(width: 10),
 
-                      //* Select branch dropdown
-                      Flexible(
-                        flex: 5,
-                        child: SearchDropdownButton(
-                          isBorderNeeded: false,
-                          buttonHint: student.branchName,
-                          searchHint: 'Find branch',
-                          itemsList: branchList,
-                          selectedValue: selectedBranch,
-                          onSelect: onBranchSelect,
-                        ),
+                    //* Select branch dropdown
+                    Flexible(
+                      flex: 5,
+                      child: SearchDropdownButton(
+                        isBorderNeeded: false,
+                        buttonHint: student.branchName,
+                        searchHint: 'Find branch',
+                        itemsList: branchList,
+                        selectedValue: selectedBranch,
+                        onSelect: onBranchSelect,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
+            ),
 
-              //* Submit button
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 17.5),
-                child: KActionButton(
-                  onTap: onSubmit,
-                  text: 'Enter following chat',
-                  fontSize: 16,
-                  color: Theme.of(context)
-                      .colorScheme
-                      .primaryContainer
-                      .withOpacity(0.5),
-                  textColor: Theme.of(context).colorScheme.secondaryContainer,
-                  fontWeight: FontWeight.w200,
-                  height: 50,
-                ),
+            //* Submit button
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: KActionButton(
+                onTap: onSubmit,
+                text: 'Enter following chat',
+                fontSize: 16,
+                color: Theme.of(context).scaffoldBackgroundColor,
+                textColor: Theme.of(context).colorScheme.onBackground,
+                fontWeight: FontWeight.w200,
+                height: 60,
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 10),
+          ],
         ),
       ),
     );

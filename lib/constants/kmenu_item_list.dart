@@ -1,5 +1,5 @@
 import 'package:engineering_hub/backend/api_calls.dart';
-import 'package:engineering_hub/constants/kstyledtext.dart';
+import 'package:engineering_hub/constants/kStyledText.dart';
 import 'package:engineering_hub/model/message_model.dart';
 import 'package:flutter/material.dart';
 import 'package:focused_menu/modals.dart';
@@ -63,7 +63,7 @@ List<FocusedMenuItem> kMenuItem(
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: styledText(
+                    child: StyledText(
                       text: 'Cancel',
                       size: 14,
                       color: Theme.of(context).secondaryHeaderColor,
@@ -71,7 +71,7 @@ List<FocusedMenuItem> kMenuItem(
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: styledText(
+                    child: StyledText(
                       text: 'Yes',
                       size: 15,
                       color: Theme.of(context).colorScheme.onBackground,
@@ -103,7 +103,7 @@ List<FocusedMenuItem> kMenuItem(
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: styledText(
+                    child: StyledText(
                       text: 'Cancel',
                       size: 14,
                       color: Theme.of(context).secondaryHeaderColor,
@@ -111,7 +111,7 @@ List<FocusedMenuItem> kMenuItem(
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: styledText(
+                    child: StyledText(
                       text: 'Yes',
                       size: 15,
                       color: Theme.of(context).colorScheme.onBackground,
@@ -126,7 +126,7 @@ List<FocusedMenuItem> kMenuItem(
     if (thisUser)
       // Delete
       FocusedMenuItem(
-        title: styledText(
+        title: const StyledText(
           text: 'Delete',
           size: 14,
           color: Colors.white,

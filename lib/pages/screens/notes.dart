@@ -1,5 +1,5 @@
 import 'package:engineering_hub/constants/ksnackbar.dart';
-import 'package:engineering_hub/constants/kstyledtext.dart';
+import 'package:engineering_hub/constants/kStyledText.dart';
 import 'package:flutter/material.dart';
 
 class NotesPage extends StatefulWidget {
@@ -17,7 +17,7 @@ class _NotesPageState extends State<NotesPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: styledText(
+        title: StyledText(
           text: 'Notes',
           color: Theme.of(context).colorScheme.onBackground,
         ),

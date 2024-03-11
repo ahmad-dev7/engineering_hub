@@ -1,7 +1,6 @@
 import 'package:engineering_hub/backend/api_calls.dart';
-import 'package:engineering_hub/constants/Kstyledtext.dart';
+import 'package:engineering_hub/constants/KStyledText.dart';
 import 'package:engineering_hub/constants/kbutton.dart';
-import 'package:engineering_hub/theme/theme_data.dart';
 import 'package:engineering_hub/constants/ksnackbar.dart';
 import 'package:engineering_hub/constants/kform_textfield.dart';
 import 'package:engineering_hub/theme/theme_changer.dart';
@@ -10,7 +9,6 @@ import 'package:engineering_hub/pages/navigation.dart';
 import 'package:engineering_hub/pages/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -46,10 +44,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<ThemeProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        title: styledText(
+        title: StyledText(
           text: 'ENGINEERING HUB',
           lSpacing: 3,
           color: Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
@@ -71,10 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   //* header image
-                  Opacity(
-                    opacity: provider.isDarkMode ? 0.8 : 1.0,
-                    child: Image.asset('images/login.png'),
-                  ),
+                  Image.asset('images/login.png'),
 
                   //* Email input field
                   KWidgetWrap(
@@ -139,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       child: isLoading
                           ? const CircularProgressIndicator()
-                          : styledText(
+                          : StyledText(
                               text: 'Login',
                               color: Theme.of(context)
                                   .colorScheme
@@ -166,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(width: 2),
                         TextButton(
                           onPressed: () => Get.to(() => const SignupPage()),
-                          child: styledText(
+                          child: StyledText(
                             text: 'Create account',
                             weight: FontWeight.bold,
                             size: 15,
