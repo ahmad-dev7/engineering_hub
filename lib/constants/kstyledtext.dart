@@ -10,17 +10,19 @@ class StyledText extends StatelessWidget {
   final double? lSpacing;
   final double? wSpacing;
   final double? height;
+  final double? decoThickness;
   const StyledText({
     super.key,
     required this.text,
     this.color,
-    this.decoration,
+    this.decoration = TextDecoration.none,
     this.decorationColor,
     this.weight,
     this.size = 20,
     this.lSpacing,
     this.wSpacing,
     this.height,
+    this.decoThickness = 1.86,
   });
 
   @override
@@ -36,7 +38,7 @@ class StyledText extends StatelessWidget {
         height: height,
         decoration: decoration,
         decorationColor: decorationColor,
-        decorationThickness: 1.86,
+        decorationThickness: decoThickness,
       ),
     );
   }

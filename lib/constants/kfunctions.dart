@@ -12,20 +12,18 @@ String getTime(String timeStamp) {
 
 Stream<List<Message>> streamOfMessages(
     {bool? newChat, String? clg, String? branch, String? sem}) async* {
-  print("getting message");
-  // while (true) {
-  //   await Future.delayed(const Duration(seconds: 1));
-  //   if (newChat ?? false) {
-  //     yield await Api().getMessage(
-  //       clg: clg,
-  //       brn: branch,
-  //       sem: sem,
-  //     );
-  //   } else {
-  //     yield await Api().getMessage();
-  //   }
-  // }
-  yield await Api().getMessage();
+  while (true) {
+    await Future.delayed(const Duration(seconds: 1));
+    if (newChat ?? false) {
+      yield await Api().getMessage(
+        clg: clg,
+        brn: branch,
+        sem: sem,
+      );
+    } else {
+      yield await Api().getMessage();
+    }
+  }
 }
 
 String getDate(String dateStamp) {
